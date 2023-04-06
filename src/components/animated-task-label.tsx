@@ -11,7 +11,7 @@ import Animated, {
 } from 'react-native-reanimated'
 
 interface Props {
-  strikethrough: boolean
+  strikethrough?: boolean
   textColor: string
   inactiveTextColor: string
   onPress?: () => void
@@ -80,7 +80,7 @@ const AnimatedTaskLabel = memo((props: Props) => {
       <AnimatedHStack alignItems="center" style={[hstackAnimatedStyles]}>
         <AnimatedText
           fontSize={19}
-          noOfLines={1}
+          noOfLines={2}
           isTruncated
           px={1}
           style={[textColorAnimatedStyles]}

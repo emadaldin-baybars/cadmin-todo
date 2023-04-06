@@ -8,14 +8,13 @@ import {
   IconButton,
   useColorModeValue
 } from 'native-base'
-import { DrawerContentComponentProps } from '@react-navigation/drawer'
 import AnimatedColorBox from './animated-color-box'
 import ThemeToggle from './theme-toggle'
 import { Feather } from '@expo/vector-icons'
 import MenuButton from './menu-button'
 
-const Sidebar = (props: DrawerContentComponentProps) => {
-  const { state, navigation } = props
+const Sidebar = (props: any) => {
+  const { state, navigation, user } = props
   const currentRoute = state.routeNames[state.index]
 
   const handlePressBackButton = useCallback(() => {
@@ -26,6 +25,9 @@ const Sidebar = (props: DrawerContentComponentProps) => {
   }, [navigation])
   const handlePressMenuAbout = useCallback(() => {
     navigation.navigate('About')
+  }, [navigation])
+  const handlePressMenuCharts = useCallback(() => {
+    navigation.navigate('Charts')
   }, [navigation])
 
   return (
@@ -59,20 +61,24 @@ const Sidebar = (props: DrawerContentComponentProps) => {
           borderWidth={3}
         />
         <Heading mb={4} size="xl">
-          Takuya Matsuyama
+          {user? user.displayName : "unknown"}
         </Heading>
         <MenuButton
           active={currentRoute === 'Main'}
           onPress={handlePressMenuMain}
-          icon="inbox"
-        >
+          icon="inbox">
           Tasks
+        </MenuButton>
+        <MenuButton
+          active={currentRoute === 'Charts'}
+          onPress={handlePressMenuCharts}
+          icon="activity">
+          Charts
         </MenuButton>
         <MenuButton
           active={currentRoute === 'About'}
           onPress={handlePressMenuAbout}
-          icon="info"
-        >
+          icon="info">
           About
         </MenuButton>
       </VStack>

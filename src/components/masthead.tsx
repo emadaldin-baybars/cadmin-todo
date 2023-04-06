@@ -1,14 +1,15 @@
 import React from 'react'
 import { ImageSourcePropType } from 'react-native'
-import { Box, VStack, Heading, Image } from 'native-base'
+import { Box, VStack, HStack, Heading, Image } from 'native-base'
 
 interface Props {
   title: string
+  desc?: string
   image: ImageSourcePropType
   children: React.ReactNode
 }
 
-const Masthead = ({ title, image, children }: Props) => {
+const Masthead = ({ title, desc, image, children }: Props) => {
   return (
     <VStack h="300px" pb={5}>
       <Image
@@ -22,11 +23,20 @@ const Masthead = ({ title, image, children }: Props) => {
         source={image}
         alt="masthead image"
       />
-      {children}
+      <HStack>
+        {children}
+      </HStack>
       <Box flex={1} />
       <Heading color="white" p={6} size="xl">
         {title}
       </Heading>
+      {
+        desc != null ? 
+        <Heading color="white" p={6} size="lg">
+          {desc}
+        </Heading>
+        : <></>
+      }
     </VStack>
   )
 }

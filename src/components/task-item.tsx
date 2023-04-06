@@ -17,7 +17,7 @@ import { Feather } from '@expo/vector-icons'
 
 interface Props extends Pick<PanGestureHandlerProps, 'simultaneousHandlers'> {
   isEditing: boolean
-  isDone: boolean
+  isDone?: boolean
   onToggleCheckbox?: () => void
   onPressLabel?: () => void
   onRemove?: () => void

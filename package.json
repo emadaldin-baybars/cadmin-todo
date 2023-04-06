@@ -1,5 +1,5 @@
 {
-  "name": "animated-todo",
+  "name": "evolvice-todo",
   "description": "A smoothly animated ToDo app built with React Native",
   "version": "1.0.0",
   "repository": {
@@ -7,8 +7,7 @@
     "url": "git+https://github.com/craftzdog/react-native-animated-todo.git"
   },
   "author": {
-    "name": "Takuya Matsuyama",
-    "url": "https://www.craftz.dog/"
+    "name": ""
   },
   "license": "MIT",
   "keywords": [
@@ -16,27 +15,31 @@
     "tutorial",
     "todo"
   ],
-  "main": "node_modules/expo/AppEntry.js",
   "scripts": {
-    "start": "expo start",
-    "android": "expo start --android",
-    "ios": "expo start --ios",
+    "start": "expo start --dev-client",
+    "android": "expo run:android",
+    "ios": "expo run:ios",
     "web": "expo start --web",
     "eject": "expo eject"
   },
   "dependencies": {
     "@react-navigation/drawer": "^6.1.8",
     "@react-navigation/native": "^6.0.6",
+    "axios": "^0.24.0",
     "expo": "~43.0.2",
     "expo-linking": "^2.4.2",
+    "expo-splash-screen": "~0.13.5",
     "expo-status-bar": "~1.1.0",
+    "expo-updates": "~0.10.13",
     "moti": "^0.16.1",
     "native-base": "^3.2.1",
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "react-native": "0.64.3",
+    "react-native-chart-kit": "^6.11.0",
     "react-native-checkbox-reanimated": "^0.1.0",
     "react-native-gesture-handler": "^1.10.3",
+    "react-native-mask-input": "^1.1.1",
     "react-native-reanimated": "^2.2.4",
     "react-native-safe-area-context": "^3.3.2",
     "react-native-screens": "^3.9.0",
